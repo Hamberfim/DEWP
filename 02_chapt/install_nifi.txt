@@ -1,0 +1,57 @@
+# @author: Anthony Hamlin
+# @date: 01/05/2021
+# Larning from Data Engineering with Python - Paul Crickard
+# ISBN-13 : 978-1839214189 | Packt Publishing (October 23, 2020)
+
+# Apache NiFi - INSTALLATION-SETUP-CONFIGURATION
+# This doc is for completing project step and an outline for a latter bash script for tasks/installs of required software.
+
+# Apache NiFi: primary tool used to data engineering piplines. 
+# It proved prebuilt processor that can be configure to an individual/organizations needs without writing code, a scheduler for frequency and backpressure to control the speed of tasks in case some operate faster than others.
+
+# Download, install and confure Apache NiFi:
+# (https://nifi.apache.org/download.html)
+
+wget https://mirrors.ocf.berkeley.edu/apache/nifi/1.12.1/nifi-1.12.1-bin.tar.gz
+# Extract:
+tar xvzf nifi-x.xx.x-bin.tar.gz
+
+# Make sure openjre/openjdk is install:
+# (book says to use openjdk-11-jre version but nifi fails to launch but successful under openjdk-8-jre).
+sudo apt install openjdk-8-jre-headless
+
+# Check for location of jvm (leave it set to the default auto mode): 
+update-alternatives --config java
+
+# Set JAVA_HOME:
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+# reload bash or reboot after install and export:
+# depending on configuration use either...
+source .bash_profile
+# OR
+source .bashrc
+
+# check firewall rules to all for port :8080 and/or :9300 according to your security and ip octets
+# debian example: sudo ufw allow from 192.x.x.x/24 to any port 9300/tcp
+
+# Run nifi, in the nifi folder:
+nifi-1.12.1/bin/nifi.sh start
+
+# OR if in the director
+bin/nifi.sh start
+
+# Test the web launch @ http://localhost(or ip):8080/nifi/
+# Change the default port. In conf/nifi.properties under '# web properties #':
+# web properties #
+nifi.web.http.port=9300
+
+# re-launch nifi
+nifi-1.12.1/bin/nifi.sh restart
+
+# Test the web launch @ http://192.x.x.x:9300/nifi/
+
+# Read/Review the quick tour at the bottom of page 20 to page 27.
+# ! NOTE ! Some of the needed setup/details are not reveled completely unless you read the entire section.
+
+
