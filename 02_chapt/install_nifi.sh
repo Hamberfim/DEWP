@@ -22,5 +22,5 @@ source .bashrc
 # Run nifi, in the nifi folder:
 nifi-1.12.1/bin/nifi.sh start
 
-# Test the NiFi local web setup
-firefox -new-window http://localhost:8080/nifi/
+# Test the NiFi local web setup (NOT for HEADLESS systems)
+# firefox -new-window http://localhost:8080/nifi/
