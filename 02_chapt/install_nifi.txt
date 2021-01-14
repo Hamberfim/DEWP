@@ -7,7 +7,7 @@
 # This doc is for completing project step and an outline for a latter bash script for tasks/installs of required software.
 
 # Apache NiFi: primary tool used to data engineering piplines. 
-# It proved prebuilt processor that can be configure to an individual/organizations needs without writing code, a scheduler for frequency and backpressure to control the speed of tasks in case some operate faster than others.
+# It provides prebuilt processor that can be configure to an individual/organizations needs without writing code, a scheduler for the run frequency and backpressure to control the speed of tasks in case some tasks operate faster than others.
 
 # Download, install and confure Apache NiFi:
 # (https://nifi.apache.org/download.html)
