@@ -24,12 +24,12 @@ systemctl status mssql-server --no-pager
 sudo apt-get install mssql-tools unixodbc-dev -y
 
 
-# make command line tools accessible to bash some sys just require
+# make command line tools accessible to bash
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 source ~/.bashrc
 
-########## Using the new mssql-server #########
+########## Example use for mssql-server #########
 ## connect locally
 # sqlcmd -S localhost -U SA -P '<YourPassword>'
 
