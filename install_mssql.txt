@@ -1,6 +1,6 @@
 # @author Anthony Hamlin
 # install mssql-server on ubuntu | requires Ubuntu 18.04 LTS or later
-# this its the outline for the bash script 
+# this is an outline for the bash script 
 
 # import ms GPG keys
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
